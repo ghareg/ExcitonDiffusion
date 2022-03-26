@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#PBS -q production
+#PBS -N VecCalc
+#PBS -l select=1:ncpus=1:ngpus=1
+#PBS -l place=free
+#PBS -V
+
+# Find out which compute node the job is using
+hostname
+
+# Change to working directory
+cd $PBS_O_WORKDIR
+
+/scratch/areg.ghazaryan/ExcitonDiffusion/ExcitonDif > ExcDif256im1.dat 2>&1
